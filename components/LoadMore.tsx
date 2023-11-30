@@ -9,13 +9,16 @@ import { AnimeProp } from "./AnimeCard";
 import AnimeCard from './AnimeCard';
 
 
+
+
 function LoadMore() {
   const { ref, inView } = useInView();
   const [data, setData] = useState<AnimeProp[]>([]);
 
   useEffect(() => {
     if (inView) {
-      alert("Load more");
+     
+      
       fetchAnime(2).then((res) => {
         setData([...data, ...res])
       });
