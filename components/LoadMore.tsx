@@ -8,7 +8,7 @@ import { AnimeProp } from "./AnimeCard";
 
 import AnimeCard from './AnimeCard';
 
-
+let page = 2;
 
 
 function LoadMore() {
@@ -18,9 +18,10 @@ function LoadMore() {
   useEffect(() => {
     if (inView) {
      
-      
-      fetchAnime(2).then((res) => {
-        setData([...data, ...res])
+
+      fetchAnime(page).then((res) => {
+        setData([...data, ...res]);
+        page++;
       });
     }
 
